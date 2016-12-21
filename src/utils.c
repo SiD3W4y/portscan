@@ -1,7 +1,31 @@
+#include <stdio.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+
 #include "utils.h"
 
-int check(char* addr,int port)
+int check(char* ip,int port)
 {
-	printf("{%s:%d}",addr,port);
-	return 0;
+	int sock;
+	struct sockaddr_in target;
+	
+	printf("CONNECT : {%s:%d}\n",ip,port);
+	
+	// Creating socket
+	sock = socket(AF_INET,SOCK_STREAM,0);
+
+	if(sock == -1){
+		perror("Error creating socket");
+		exit(-1);
+	}
+
+	target.sin_addr.s_addr = inet_addr(ip);
+	target.sin_family = AF_INET;
+	target.sin_port = port;
+
+	if(connect(sock,(struct sockaddr *)&target,sizeof(target)) < 0){
+		return 0;
+	}
+
+	return 1;
 }
