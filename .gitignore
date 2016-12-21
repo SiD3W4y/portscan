@@ -1,0 +1,8 @@
+CmakeCache.txt
+cmake_install.cmake
+CmakeFiles
+Makefile
+*.o
+*.swp
+*.swo
+portscan
