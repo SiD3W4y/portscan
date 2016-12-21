@@ -9,6 +9,7 @@ cmake . && make
 
 ## Run
 ```
+# Will scan ports 0-1024
 ./portscan <ip>
 ```
 or
