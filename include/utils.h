@@ -6,5 +6,11 @@
 //	 1 : on port open
 int check(char* addr,int port);
 
+// Prints error in red
+void print_error(char* msg);
+
+// Prints port in green
+void print_port(int port);
+
 
 #endif
