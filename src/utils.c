@@ -5,6 +5,14 @@
 
 #include "utils.h"
 
+void print_error(char* msg){
+
+}
+
+void print_port(int port){
+
+}
+
 int check(char* ip,int port)
 {
 	int sock;
